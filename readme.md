@@ -1,11 +1,8 @@
 # CamBuildr Validation Rules
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-validation-rules.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-validation-rules)
-[![Code coverage](https://scrutinizer-ci.com/g/spatie/laravel-validation-rules/badges/coverage.png)](https://scrutinizer-ci.com/g/spatie/laravel-validation-rules)
-[![Build Status](https://img.shields.io/travis/spatie/laravel-validation-rules/master.svg?style=flat-square)](https://travis-ci.org/spatie/laravel-validation-rules)
-[![StyleCI](https://github.styleci.io/repos/152587206/shield?branch=master)](https://github.styleci.io/repos/152587206)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/campaigningbureau/cambuildr-validation?style=flat-square)](https://img.shields.io/packagist/v/campaigningbureau/cambuildr-validation?style=flat-square)
 
-Validation rules that are used by the CamBuildr
+Validation rules that are used by the CamBuildr ([https://www.cambuildr.com](https://www.cambuildr.com))
 
 ## Installation
 
@@ -24,6 +21,15 @@ The package will automatically register itself.
 ### `EmailCambuildr`
 
 Determine if the given email address is valid for the CamBuildr.
+
+## API Routes
+
+The package provides GET-Routes to perform validation through API calls.
+Route prefix and middleware can be configured when publishing the config:
+
+```bash
+php artisan vendor:publish --provider="CampaigningBureau\CambuildrValidation\CambuildrValidationServiceProvider" --tag="config"
+```
 
 ## Testing
 

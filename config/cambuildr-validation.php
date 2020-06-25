@@ -1,6 +1,13 @@
 <?php
 
 return [
-    'posts_table' => 'posts',
-    // other options...
+    /*
+    |--------------------------------------------------------------------------
+    | Specify the prefix and the middleware to be used for the API-Routes
+    |--------------------------------------------------------------------------
+    */
+    'routes' => [
+        'prefix'     => 'cambuildr-validation',
+        'middleware' => ['api'],
+    ],
 ];
