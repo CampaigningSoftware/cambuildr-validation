@@ -1,0 +1,44 @@
+{
+    "name": "campaigningbureau/cambuildr-validation",
+    "description": "Validation rules that are used by the CamBuildr",
+    "type": "library",
+    "require": {
+        "illuminate/support": "5.5.*",
+        "php": "^7.1.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stefan Schindler",
+            "email": "stefan.schindler@campaigning-bureau.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "CampaigningBureau\\CambuildrValidation\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CampaigningBureau\\CambuildrValidation\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CampaigningBureau\\CambuildrValidation\\CambuildrValidationServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "phpunit/phpunit": "6.5.*",
+        "orchestra/testbench": "3.5.*"
+    }
+}
