@@ -20,7 +20,7 @@ The package will automatically register itself.
 
 ### `EmailCambuildr`
 
-Determine if the given email address is valid for the CamBuildr.
+Determine if the given email address is valid for the CamBuildr. The error message can be overridden via the constructor.
 
 ## API Routes
 
