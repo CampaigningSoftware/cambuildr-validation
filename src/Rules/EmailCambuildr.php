@@ -25,6 +25,11 @@ class EmailCambuildr implements Rule
     /**
      * Determine if the validation rule passes.
      *
+     * validate email for our cambuildr.
+     * it uses the standard filtering with filter_var and adds the constraint, that emails may not contain a ^, #, & or
+     * ! sign. this is due to problems with sendinblue, who do not accept such emails. also, sib does not allow dashes
+     * in the tld (last) part of the email. so we also dont accept them
+     *
      * @param string $attribute
      * @param mixed  $value
      *
@@ -42,19 +47,11 @@ class EmailCambuildr implements Rule
 
         // try to extract the tld from the filtered email
         $parts = explode('@', $value);
-        $domainPartsByDash = explode('-', $parts[1]);
+        $domainParts = explode('-', $parts[1]);
 
-        // if the last exploded part does not contain a dot, it was the tld and therefore throws an error
-        if (strpos($domainPartsByDash[\count($domainPartsByDash) - 1], '.') === false) {
+        // if the last exploded part does not contain a dot, it was the tld and
+        if (strpos($domainParts[\count($domainParts) - 1], '.') === false) {
             return false;
-        }
-
-        // if any domain part is just 1 character long, throw an error
-        $domainPartsByDot = explode('.', $parts[1]);
-        foreach ($domainPartsByDot as $domainPartByDot) {
-            if (\strlen($domainPartByDot) === 1) {
-                return false;
-            }
         }
 
         return $basicFilter;
