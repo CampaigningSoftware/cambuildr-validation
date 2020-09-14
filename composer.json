@@ -3,8 +3,8 @@
     "description": "Validation rules that are used by the CamBuildr",
     "type": "library",
     "require": {
-        "illuminate/support": "5.5.*",
-        "php": ">=7.0.0"
+        "illuminate/support": "5.6.*",
+        "php": ">=7.1.3"
     },
     "license": "MIT",
     "authors": [
@@ -38,7 +38,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
-        "phpunit/phpunit": "6.5.*",
-        "orchestra/testbench": "3.5.*"
+        "phpunit/phpunit": "^7.0",
+        "orchestra/testbench": "3.6.*"
     }
 }
