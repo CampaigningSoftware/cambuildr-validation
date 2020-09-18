@@ -27,14 +27,23 @@ class EmailCambuildrTest extends TestCase
     {
         $this->assertRulePasses('email@example.com');
         $this->assertRulePasses('email@example.ac.at');
+        $this->assertRulePasses('email@ex-ample.com');
     }
 
     /**
      * @test
      */
-    public function shouldNotAllowEmailWithSingleCharacterDomainPart()
+    public function shouldAllowEmailWithSingleCharacterDomainPart()
     {
-        $this->assertRuleFails('email@a.example.com');
+        $this->assertRulePasses('email@a.example.com');
+    }
+
+    /**
+     * @test
+     */
+    public function shouldNotAllowEmailWithDashAsLastDomainPart()
+    {
+        $this->assertRuleFails('email@example.co-m');
     }
 
     /**
