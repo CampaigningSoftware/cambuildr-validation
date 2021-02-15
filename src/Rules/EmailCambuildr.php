@@ -8,6 +8,20 @@ use Illuminate\Contracts\Validation\Rule;
 
 class EmailCambuildr implements Rule
 {
+    private $message = 'The given email is invalid';
+
+    /**
+     * EmailCambuildr constructor.
+     *
+     * @param string $message
+     */
+    public function __construct($message = '')
+    {
+        if ($message !== '') {
+            $this->message = $message;
+        }
+    }
+
     /**
      * Determine if the validation rule passes.
      *
@@ -50,6 +64,6 @@ class EmailCambuildr implements Rule
      */
     public function message()
     {
-        return 'The given email is invalid';
+        return $this->message;
     }
 }
