@@ -1,10 +1,10 @@
 <?php
 
 
-namespace CampaigningBureau\CambuildrValidation\Tests;
+namespace CampaigningSoftware\CambuildrValidation\Tests;
 
 
-use CampaigningBureau\CambuildrValidation\Rules\EmailCambuildr;
+use CampaigningSoftware\CambuildrValidation\Rules\EmailCambuildr;
 
 class EmailCambuildrTest extends TestCase
 {

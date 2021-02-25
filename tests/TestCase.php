@@ -1,8 +1,8 @@
 <?php
 
-namespace CampaigningBureau\CambuildrValidation\Tests;
+namespace CampaigningSoftware\CambuildrValidation\Tests;
 
-use CampaigningBureau\CambuildrValidation\CambuildrValidationServiceProvider;
+use CampaigningSoftware\CambuildrValidation\CambuildrValidationServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {

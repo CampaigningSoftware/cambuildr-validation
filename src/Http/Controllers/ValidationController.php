@@ -1,10 +1,10 @@
 <?php
 
 
-namespace CampaigningBureau\CambuildrValidation\Http\Controllers;
+namespace CampaigningSoftware\CambuildrValidation\Http\Controllers;
 
 
-use CampaigningBureau\CambuildrValidation\Rules\EmailCambuildr;
+use CampaigningSoftware\CambuildrValidation\Rules\EmailCambuildr;
 
 class ValidationController extends Controller
 {

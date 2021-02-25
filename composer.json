@@ -1,5 +1,5 @@
 {
-    "name": "campaigningbureau/cambuildr-validation",
+    "name": "campaigningsoftware/cambuildr-validation",
     "description": "Validation rules that are used by the CamBuildr",
     "type": "library",
     "require": {
@@ -10,17 +10,17 @@
     "authors": [
         {
             "name": "Stefan Schindler",
-            "email": "stefan.schindler@campaigning-bureau.com"
+            "email": "stefan.schindler@cambuildr.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "CampaigningBureau\\CambuildrValidation\\": "src/"
+            "CampaigningSoftware\\CambuildrValidation\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "CampaigningBureau\\CambuildrValidation\\Tests\\": "tests"
+            "CampaigningSoftware\\CambuildrValidation\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -31,7 +31,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "CampaigningBureau\\CambuildrValidation\\CambuildrValidationServiceProvider"
+                "CampaigningSoftware\\CambuildrValidation\\CambuildrValidationServiceProvider"
             ]
         }
     },
