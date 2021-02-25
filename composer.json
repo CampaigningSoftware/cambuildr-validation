@@ -1,5 +1,5 @@
 {
-    "name": "campaigningbureau/cambuildr-validation",
+    "name": "campaigningsoftware/cambuildr-validation",
     "description": "Validation rules that are used by the CamBuildr",
     "type": "library",
     "require": {
@@ -10,7 +10,7 @@
     "authors": [
         {
             "name": "Stefan Schindler",
-            "email": "stefan.schindler@campaigning-bureau.com"
+            "email": "stefan.schindler@cambuildr.com"
         }
     ],
     "autoload": {
