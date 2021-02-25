@@ -1,6 +1,6 @@
 <?php
 
-namespace CampaigningBureau\CambuildrValidation\Http\Controllers;
+namespace CampaigningSoftware\CambuildrValidation\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;

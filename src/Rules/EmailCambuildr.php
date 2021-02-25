@@ -1,7 +1,7 @@
 <?php
 
 
-namespace CampaigningBureau\CambuildrValidation\Rules;
+namespace CampaigningSoftware\CambuildrValidation\Rules;
 
 
 use Illuminate\Contracts\Validation\Rule;

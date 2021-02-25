@@ -15,12 +15,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "CampaigningBureau\\CambuildrValidation\\": "src/"
+            "CampaigningSoftware\\CambuildrValidation\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "CampaigningBureau\\CambuildrValidation\\Tests\\": "tests"
+            "CampaigningSoftware\\CambuildrValidation\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -31,7 +31,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "CampaigningBureau\\CambuildrValidation\\CambuildrValidationServiceProvider"
+                "CampaigningSoftware\\CambuildrValidation\\CambuildrValidationServiceProvider"
             ]
         }
     },

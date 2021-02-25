@@ -1,7 +1,7 @@
 <?php
 
 
-namespace CampaigningBureau\CambuildrValidation;
+namespace CampaigningSoftware\CambuildrValidation;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
