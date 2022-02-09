@@ -5,17 +5,18 @@ namespace CampaigningSoftware\CambuildrValidation\Rules;
 
 
 use Illuminate\Contracts\Validation\Rule;
+use function count;
 
 class EmailCambuildr implements Rule
 {
-    private $message = 'The given email is invalid';
+    private string $message = 'The given email is invalid';
 
     /**
      * EmailCambuildr constructor.
      *
      * @param string $message
      */
-    public function __construct($message = '')
+    public function __construct(string $message = '')
     {
         if ($message !== '') {
             $this->message = $message;
@@ -35,11 +36,10 @@ class EmailCambuildr implements Rule
      *
      * @return bool
      */
-    public function passes($attribute, $value)
+    public function passes($attribute, $value): bool
     {
-        $basicFilter = (filter_var($value, FILTER_VALIDATE_EMAIL) !== false) && (strpos($value, '^') === false) &&
-                       (strpos($value, '#') === false) && (strpos($value, '&') === false) &&
-                       (strpos($value, '!') === false);
+        $basicFilter = (filter_var($value, FILTER_VALIDATE_EMAIL) !== false) && (!str_contains($value, '^')) &&
+                       (!str_contains($value, '#')) && (!str_contains($value, '&')) && (!str_contains($value, '!'));
 
         if (!$basicFilter) {
             return false;
@@ -50,11 +50,11 @@ class EmailCambuildr implements Rule
         $domainParts = explode('-', $parts[1]);
 
         // if the last exploded part does not contain a dot, it was the tld and
-        if (strpos($domainParts[\count($domainParts) - 1], '.') === false) {
+        if (!str_contains($domainParts[count($domainParts) - 1], '.')) {
             return false;
         }
 
-        return $basicFilter;
+        return true;
     }
 
     /**
@@ -62,7 +62,7 @@ class EmailCambuildr implements Rule
      *
      * @return string
      */
-    public function message()
+    public function message(): string
     {
         return $this->message;
     }
