@@ -4,10 +4,11 @@
 namespace CampaigningSoftware\CambuildrValidation\Rules;
 
 
-use Illuminate\Contracts\Validation\Rule;
+use Closure;
+use Illuminate\Contracts\Validation\ValidationRule;
 use function count;
 
-class EmailCambuildr implements Rule
+class EmailCambuildr implements ValidationRule
 {
     private string $message = 'The given email is invalid';
 
@@ -24,6 +25,22 @@ class EmailCambuildr implements Rule
     }
 
     /**
+     * Run the validation rule.
+     *
+     * @param string $attribute
+     * @param mixed  $value
+     * @param Closure $fail
+     *
+     * @return void
+     */
+    public function validate(string $attribute, mixed $value, Closure $fail): void
+    {
+        if (!$this->passes($attribute, $value)) {
+            $fail($this->message);
+        }
+    }
+
+    /**
      * Determine if the validation rule passes.
      *
      * validate email for our cambuildr.
@@ -36,7 +53,7 @@ class EmailCambuildr implements Rule
      *
      * @return bool
      */
-    public function passes($attribute, $value): bool
+    public function passes(string $attribute, mixed $value): bool
     {
         $basicFilter = (filter_var($value, FILTER_VALIDATE_EMAIL) !== false) && (!str_contains($value, '^')) &&
                        (!str_contains($value, '#')) && (!str_contains($value, '&')) && (!str_contains($value, '!'));
