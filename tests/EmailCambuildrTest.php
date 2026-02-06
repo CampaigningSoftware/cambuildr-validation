@@ -20,9 +20,7 @@ class EmailCambuildrTest extends TestCase
         $this->rule = (new EmailCambuildr());
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function shouldAllowValidEmailAddress()
     {
         $this->assertRulePasses('email@example.com');
@@ -30,25 +28,19 @@ class EmailCambuildrTest extends TestCase
         $this->assertRulePasses('email@ex-ample.com');
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function shouldAllowEmailWithSingleCharacterDomainPart()
     {
         $this->assertRulePasses('email@a.example.com');
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function shouldNotAllowEmailWithDashAsLastDomainPart()
     {
         $this->assertRuleFails('email@example.co-m');
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function shouldNotAllowEmailWithoutTld()
     {
         $this->assertRuleFails('email@example');
